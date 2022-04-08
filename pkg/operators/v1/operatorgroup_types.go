@@ -47,7 +47,7 @@ type OperatorGroupSpec struct {
 	StaticProvidedAPIs bool `json:"staticProvidedAPIs,omitempty"`
 }
 
-// OperatorGroupStatus is the status for an OperatorGroupResource.
+// ds is the status for an OperatorGroupResource.
 type OperatorGroupStatus struct {
 	// Namespaces is the set of target namespaces for the OperatorGroup.
 	// +listType=set
@@ -57,7 +57,7 @@ type OperatorGroupStatus struct {
 	ServiceAccountRef *corev1.ObjectReference `json:"serviceAccountRef,omitempty"`
 
 	// LastUpdated is a timestamp of the last time the OperatorGroup's status was Updated.
-	LastUpdated *metav1.Time `json:"lastUpdated"`
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty"`
 
 	// Conditions is an array of the OperatorGroup's conditions.
 	Conditions []metav1.Condition `json:"conditions,omitempty"`
